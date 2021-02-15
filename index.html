@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style type="text/css">
+            body{
+                color:white;
+                background-color: yellow}
+                #seccion1{
+                    font-size: 60px;
+                    text-align: center;
+                    background-image: url(https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png);
+                    background-size: contain;
+                }
+                #proyectos{
+                    display: grid;
+                    grid-template-columns: auto auto;
+                }
+
+                .proyecto {
+                    width: 50%;
+                }
+                .proyecto img{
+                    width: 50%;
+                }
+                </style>
+            
+    </head>
+    <body>
+        <section id="seccion1">
+            <h1>Bienvenido!</h1>
+        </section>
+        <section id="proyectos"></section>
+        
+    </body>
+    <script>
+        const datos = [{
+            img: 'http://www.xaviro.com/assets/img/skills/js.svg',
+            desc: 'Javascript'
+        },
+        {
+            img: 'http://www.xaviro.com/assets/img/skills/html.svg"',
+            desc: 'HTML'
+        },
+        {
+            img: 'http://www.xaviro.com/assets/img/skills/css.svg',
+            desc: 'CSS'
+        }]
+        console.log('hello world'); 
+        let proyectos = document.querySelector('#proyectos');
+        proyectos.style.background = 'red';
+
+        function dinamico(src, desc){
+            let div = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = src;
+        let p = document.createElement("p");
+        p.innerHTML = desc;
+        div.appendChild(img);
+        div.appendChild(p);
+        proyectos.appendChild(div); 
+        }
+        datos.forEach(({img,src}) => dinamico(img, src));
+    
+    </script>
+</html>
